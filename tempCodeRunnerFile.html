@@ -1,0 +1,15 @@
+ <body>
+    <script>
+      // Add your code below this line
+      const scale2 = d3.scaleLinear();
+  scale2.domain([250, 500]);
+  scale2.range([10, 150]);
+  
+  
+      // Add your code above this line
+      const output2 = scale2(50);
+      d3.select("body")
+        .append("h2")
+        .text(output);
+    </script>
+  </body>
