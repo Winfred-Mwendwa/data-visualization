@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<body>
+    <script>
+      const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      const w = 500;
+      const h = 100;
+  
+      const svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+  
+      svg.selectAll("rect")
+         .data(dataset)
+         .enter()
+         .append("rect")
+         .attr("x", (d, i) => i * 30)
+         .attr("y", (d, i) => h - 3 * d)
+         .attr("width", 25)
+         .attr("height", (d, i) => 3 * d)
+         .attr("fill", "navy");
+  
+      svg.selectAll("text")
+         .data(dataset)
+         .enter()
+         // Add your code below this line
+        .append("text")
+  
+         .attr("x",(d, i)=> i*30)
+  
+         .attr("y",(d)=>h-3*d-3) // For the label to sit higher than the bar, decide if the y value for the text should be 3 greater or 3 less than the y value for the bar.
+         .text((d)=>d)
+  
+  
+  
+         // Add your code above this line
+    </script>
+  </body>
+
+  <!--style the labels-->
+  <body>
+    <script>
+      const dataset5 = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      const w5 = 500;
+      const h5 = 100;
+  
+      const svg5 = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+  
+      svg.selectAll("rect")
+         .data(dataset)
+         .enter()
+         .append("rect")
+         .attr("x", (d, i) => i * 30)
+         .attr("y", (d, i) => h - 3 * d)
+         .attr("width", 25)
+         .attr("height", (d, i) => d * 3)
+         .attr("fill", "navy");
+  
+      svg.selectAll("text")
+         .data(dataset)
+         .enter()
+         .append("text")
+         .text((d) => d)
+         .attr("x", (d, i) => i * 30)
+         .attr("y", (d, i) => h - (3 * d) - 3)
+         // Add your code below this line
+  
+  .attr("font-size", "25px")
+  .attr("fill", "red")
+  
+         // Add your code above this line
+    </script>
+  </body>

@@ -23,3 +23,56 @@
         // Add your code above this line
     </script>
   </body>
+
+
+  <!--set the height of bars(divs) dynamically-->
+  <style>
+    .bar {
+      width: 25px;
+      height: 100px;
+      /* Add your code below this line */
+      margin: 2px; //space out the bars
+      
+      /* Add your code above this line */
+      display: inline-block;
+      background-color: blue;
+    }
+  </style>
+  <body>
+    <script>
+      const dataset1 = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      d3.select("body").selectAll("div")
+        .data(dataset)
+        .enter()
+        .append("div")
+        .attr("class", "bar")
+        .style("height", (d) => (d*10 + "px")) // multipling by a constanant doesn't change its value, only scales it
+    </script>
+  </body>
+
+
+<!-- SVG-"scalable" means that, if you zoom in or out on an object, it would not appear pixelated. It scales with the display system-->
+  <style>
+    svg {
+      background-color: pink;
+    }
+  </style>
+  <body>
+    <script>
+      const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      const w = 500;
+      const h = 100;
+  
+      const svg = d3.select("body")
+        // Add your code below this line
+     
+      .append("svg")
+      .attr("width", w)
+      .attr("height", h)
+  
+  
+         // Add your code above this line
+    </script>
+  </body>
