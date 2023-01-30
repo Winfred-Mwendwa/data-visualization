@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<!--An SVG rect shape has four attributes. 
+    There are the x and y coordinates for where it is placed in the svg area.
+     It also has a height and width to specify the size.-->
+<body>
+    <script>
+      const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      const w = 500;
+      const h = 100;
+  
+      const svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h)
+                    // Add your code below this line
+  
+                    .append("rect")
+                    .attr("x", 0)
+                    .attr("y", 0)
+                    .attr("width", 25)
+                    .attr("height", 100);
+  
+                    // Add your code above this line
+    </script>
+  </body>
+
+
+
+  <body>
+    <script>
+      const dataset1 = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      const w1 = 500;
+      const h1 = 100;
+  
+      const svg1 = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+  
+      svg.selectAll("rect")
+         // Add your code below this line
+        .data(dataset)
+        .enter()
+        .append("rect")
+  
+  
+         // Add your code above this line
+         .attr("x", 0)
+         .attr("y", 0)
+         .attr("width", 25)
+         .attr("height", 100);
+    </script>
+  </body>
+
+
+<!--dynamically set the x-cordinate for each bar-->
+  <body>
+    <script>
+      const dataset2 = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      const w2 = 500;
+      const h2 = 100;
+  
+      const svg2 = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+  
+      svg.selectAll("rect")
+         .data(dataset)
+         .enter()
+         .append("rect")
+         .attr("x", (d, i) => {
+           // Add your code below this line
+          return i*30
+  
+           // Add your code above this line
+         })
+         .attr("y", 0)
+         .attr("width", 25)
+         .attr("height", 100);
+    </script>
+  </body>
+
+  <!--dynamically set the height of each bar-->
+
+  <body>
+    <script>
+      const dataset3 = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      const w3 = 500;
+      const h3 = 100;
+  
+      const svg3 = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+  
+      svg.selectAll("rect")
+         .data(dataset)
+         .enter()
+         .append("rect")
+         .attr("x", (d, i) => i * 30)
+         .attr("y", 0)
+         .attr("width", 25)
+         .attr("height", (d, i) => {
+           // Add your code below this line
+          return d*3
+  
+  
+           // Add your code above this line
+         });
+    </script>
+  </body>
+
+  <!--put bars right side up using y=h - m * d
+   where h is the height, m the scaling constant and d the datapoint value-->
+
+  <body>
+    <script>
+      const dataset4 = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      const w4 = 500;
+      const h4 = 100;
+  
+      const svg4 = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+  
+      svg.selectAll("rect")
+         .data(dataset)
+         .enter()
+         .append("rect")
+         .attr("x", (d, i) => i * 30)
+         .attr("y", (d, i) => {
+           // Add your code below this line
+  
+          return h-3*d
+  
+           // Add your code above this line
+         })
+         .attr("width", 25)
+         .attr("height", (d, i) => 3 * d);
+    </script>
+  </body>
+
+
+  <!--use fillattribute to set the color of the rect-->
+
+  <body>
+    <script>
+      const dataset5 = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+  
+      const w5 = 500;
+      const h5 = 100;
+  
+      const svg5 = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+  
+      svg.selectAll("rect")
+         .data(dataset)
+         .enter()
+         .append("rect")
+         .attr("x", (d, i) => i * 30)
+         .attr("y", (d, i) => h - 3 * d)
+         .attr("width", 25)
+         .attr("height", (d, i) => 3 * d)
+         // Add your code below this line
+          .attr("fill", "navy")
+  
+  
+         // Add your code above this line
+    </script>
+  </body>
