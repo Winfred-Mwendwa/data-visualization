@@ -1,31 +1,23 @@
 <script>
     document.addEventListener('DOMContentLoaded', function(){
       document.getElementById('getMessage').onclick = function(){
-        const req = new XMLHttpRequest();
+        const req=new XMLHttpRequest();
         req.open("GET",'/json/cats.json',true);
         req.send();
         req.onload = function(){
           const json = JSON.parse(req.responseText);
           let html = "";
-          //This code generates an HTML string from a JSON array. 
-          //The forEach method is used to iterate over each object in the array, and for each object, its keys are extracted using Object.keys. 
-          //Then, for each key-value pair, the key is wrapped in strong tags and the value is concatenated to form a string representation of the object.
-          // Finally, the generated string is appended to the html variable. The result is an HTML string that can be used to dynamically render data on a webpage.
-          // Add your code below this line
-        json.forEach(function(val) {
-          const keys = Object.keys(val);
-          html += "<div>";
-          keys.forEach(function(key) {
-            html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+          json.forEach(function(val) {
+            html += "<div class = 'cat'>";
+            // Add your code below this line
   
+  html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
+            // Add your code above this line
+            html += "</div><br>";
           });
-          html += "</div><br>";
-        })
-  
-          // Add your code above this line
-          document.getElementsByClassName('message')[0].innerHTML = html;
+          document.getElementsByClassName('message')[0].innerHTML=html;
         };
-      };
+       };
     });
   </script>
   
@@ -55,7 +47,6 @@
       border: 1px solid #0F5897;
     }
   </style>
-  
   <h1>Cat Photo Finder</h1>
   <p class="message box">
     The message will go here
